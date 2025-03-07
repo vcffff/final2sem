@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <div id="topbar">
+    <ul style="font-family: Montserrat;display: flex;justify-content: space-around">
+        <a href="index.html">Home</a>
+        <a href="lego.html">AniTop</a>
+        <a href="login.html">My profile</a>
+        <a href="secondpage.html">AniShuffle</a>
+        <a href="Paralax.html">Our slogan</a>
+    </ul>
+  </div>
+
+ 
+
+
+
+  <section>
+      <div id="parallax" class="parallax-item">
+        <h2>It’s not about how old you are.</h2>
+      </div>
+      <div class="parallax-item">
+        <h2>It’s about the fantasy inside you.</h2>
+      </div>
+      <div class="parallax-item">
+        <h2>A world of wonder awaits.</h2>
+      </div>
+      <div class="parallax-item">
+        <h2>Let’s unlock it together.</h2>
+      </div>
+  </section>
+
+</body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200..900&display=swap');
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: yellow;
+}
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+  #topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  #topbar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #topbar ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+
+  #topbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+  }
+
+  #topbar ul li a:hover {
+    color: gold;
+  }
+
+
+  #rightbar:hover {
+    width: 180px;
+  }
+
+  #rightbar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #rightbar ul li {
+    text-align: center;
+    padding: 15px;
+  }
+
+  #rightbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    transition: 0.3s;
+  }
+
+  #rightbar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+
+  .parallax-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: "Titillium Web", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .parallax-item h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .parallax-item:first-child {
+    background: url(films2/waa.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 600px;
+  }
+
+  .parallax-item:nth-child(2) {
+    background: url(films2/wallhaven-nk953m.jpg);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    min-height: 600px;
+  }
+
+  .parallax-item:nth-child(3) {
+    background: url(films2/wallhaven-95dxd1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 600px;
+  }
+
+  .parallax-item:nth-child(4) {
+    background: url(films2/wallhaven-4yjjwk.jpg);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    min-height: 600px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .parallax-item h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  const parallax = document.getElementById("parallax");
+
+  window.addEventListener("scroll", function () {
+    let offset = window.pageYOffset;
+    parallax.style.backgroundPositionY = offset * 0.5 + "px";
+  });
+</script>

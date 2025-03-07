@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Movie Carousel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Darker+Grotesque:wght@300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titan+One&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+      body {
+        font-family:Titillium Web;
+        background-color: #111;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      
+        margin: 0;
+      }
+      .carousel {
+        width: 70%;
+        height: 400px;
+      }
+      .carousel .carousel-item {
+        width: 250px;
+        transition: transform 0.1s;
+      }
+      .carousel .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .carousel-item.active {
+        transform: scale(1.2);
+        box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
+      }
+      .spin-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #b451d7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: background-color 0.3s ease;
+      }
+      .spin-button:hover {
+        background-color: #8a2be2;
+      }
+      .result-message {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      .result-message.show {
+        opacity: 1;
+      }
+      @media screen and (max-width:480px) {
+        h1{
+            font-size: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .jojo{
+          justify-content: center;
+        }
+        .bobo{
+          display: flex;
+          justify-content: center;
+        }
+        img{width: 80%;}
+        .negr{
+        font-size: 120%;
+        }
+        
+      }        .sidebar {
+    position: fixed;
+    top: 0;
+    left: -350px; 
+    width: 250px;
+    height: 100%;
+    background: #222;
+    color: white;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+}
+.negr{
+  font-size:50px;
+  text-align: center;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #444;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.purple{
+    background-color: purple;
+}
+button:hover{
+  opacity: 0.6;
+  cursor: pointer;
+}
+textarea{
+  width: 600px;
+  height: 400px;
+  font-size: 40px;
+  font-family: Montserrat;
+}
+
+    </style>
+</head>
+<body>
+ 
+    <div style="display: flex;justify-content: start;">
+    <div style="display: flex;gap: 20px;">
+        
+        <div class="sidebar" id="sidebar">
+            <button class="close-btn" onclick="toggleSidebar()">×</button>
+            <a href="index.html">Home</a>
+            <a href="lego.html">AniTop</a>
+            <a href="login.html">My profile</a>
+            <a href="secondpage.html">AniShuffle</a>
+            <a href="Paralax.html">Our slogan</a>
+        </div>
+        
+  
+        <div onclick="toggleSidebar()" style="cursor: pointer;">
+            <h1 style="color: white;"><span class="purple">Ani</span>Shuffle</h1>
+        </div>
+    
+        
+
+</div>  
+
+
+</div>
+
+<div><h1 class="negr" style="color: white;">Select right genre is also<span style="color: red;">  important </span></h1>
+
+<div style="display: flex;gap: 30px;flex-wrap: wrap;" class="jojo">
+  <div class="bobo"><img style="border-radius: 7%;" src="films/image 118.png" alt=""></div>
+<div class="bobo"><img style="border-radius: 7%;" src="films/image 26.png" alt=""></div>
+<div class="bobo"><img  style="border-radius: 7%;" src="films/image 8.png" alt=""></div>
+<div class="bobo"><img style="border-radius: 7%;" src="films/image 117.png" alt=""></div>
+</div></div>
+<h1 style="color: white;font-family: Montserrat;">Tell us about your fav genre</h1>
+<div style="margin-top: 2%; display: flex;justify-self:center;">
+
+  <div style="width:50%;display: flex;justify-content: center;align-items: center;"><img src="image 62.png" alt="" width="90%"></div>
+  <div style="display: flex;justify-content: center;align-items: center;"><textarea style="color: white; " name=""   id=""></textarea></div>
+</div>
+<div><div><button  onclick="maga()" style="background-color: purple;border-radius: 9%;margin-top: 20%;color: white;font-size: 30px;font-family: Montserrat;">sumbit</button></div></div>
+    <h1 style="color: white;">Let us help you!</h1>
+    <div class="carousel">
+      <a class="carousel-item" href="#one!"
+        ><img src="image 29.png" alt=""
+      /></a>
+      <a class="carousel-item" href="#two!"
+        ><img src="image 62.png" alt=""
+      /></a>
+      <a class="carousel-item" href="#three!"
+        ><img src="MacBook Pro 16_ - 4.png" alt=""
+      /></a>
+      <a class="carousel-item" href="#four!"
+        ><img src="image 31.png" alt=""
+      /></a>
+      <a class="carousel-item" href="#four!"
+        ><img src="image 36.png" alt=""
+      /></a>
+      <a class="carousel-item" href="#four!"
+        ><img src="MacBook Pro 16_ - 4.png" alt=""
+      /></a>
+      <a class="carousel-item" href="#four!"
+        ><img src="MacBook Pro 16_ - 6.png" alt=""
+      /></a>
+      <a class="carousel-item" href="#four!"
+      ><img src="image 31.png" alt=""
+    /></a>
+    <a class="carousel-item" href="#four!"
+    ><img src="add (2).png" alt=""
+  /></a>
+  <a class="carousel-item" href="#four!"
+    ><img src="image 38.png" alt=""
+  /></a>
+  <a class="carousel-item" href="#four!"
+    ><img src="image 60.png" alt=""
+  /></a>
+  <a class="carousel-item" href="#four!"
+    ><img src="image 63.png" alt=""
+  /></a>
+  <a class="carousel-item" href="#four!"
+    ><img src="image 51.png" alt=""
+  /></a>
+  <a class="carousel-item" href="#four!"
+    ><img src="MacBook Pro 16_ - 6 (1).png" alt=""
+  /></a>
+  <a class="carousel-item" href="#four!"
+    ><img src="MacBook Pro 16_ - 5.png" alt=""
+  /></a>
+    </div>
+
+
+    <button class="spin-button">Try it</button>
+
+
+    <div class="result-message" id="resultMessage"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const carousel = $(".carousel").carousel({
+          dist: -100,
+          shift: 50,
+          padding: 20,
+          indicators: false,
+          numVisible: 20,
+        });
+
+        const spinButton = document.querySelector('.spin-button');
+        const resultMessage = document.getElementById('resultMessage');
+
+        spinButton.addEventListener('click', () => {
+         
+          const spinDuration = 1000; 
+          const spinInterval = 100; 
+          const totalSpins = spinDuration / spinInterval;
+
+          let spinCount = 0;
+          const spinIntervalId = setInterval(() => {
+            carousel.carousel('next');
+            spinCount++;
+            if (spinCount >= totalSpins) {
+              clearInterval(spinIntervalId);
+
+             
+              const items = document.querySelectorAll('.carousel-item');
+              const randomIndex = Math.floor(Math.random() * items.length);
+              const selectedItem = items[randomIndex];
+
+            
+              setTimeout(() => {
+                carousel.carousel('set', randomIndex);
+                resultMessage.textContent = ` ${selectedItem.querySelector('img').alt}`;
+                resultMessage.classList.add('show');
+              }, 500);
+            }
+          }, spinInterval);
+        });
+      });
+      function toggleSidebar() {
+    let sidebar = document.getElementById("sidebar");
+    if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-250px"; 
+    } else {
+        sidebar.style.left = "0px"; 
+    }
+}
+function maga(){
+  alert('thank a lot!')
+  window.location.reload()
+}
+    </script>
+</body>
+</html>
