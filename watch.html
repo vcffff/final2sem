@@ -3,9 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Anime World - Watch Your Favorite Anime</title>
+    <link rel="stylesheet" href="watch.css">
 </head>
 <body>
-    
+
+
+    <header>
+        <h1>Anime World</h1>
+        <p>Watch Your Favorite Anime Anytime, Anywhere!</p>
+    </header>
+
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lego.html">AniTop</a>
+        <a href="login.html">My profile</a>
+        <a href="secondpage.html">AniShuffle</a>
+        <a href="Paralax.html">Our slogan</a>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div>
+            <h2>Unlimited Anime Streaming</h2>
+            <p>Join thousands of fans and watch the best anime series and movies.</p>
+            <button onclick="ck()">Get Started</button>
+        </div>
+    </section>
+
+  
+    <div class="container" id="popular">
+        <div class="card">
+            <h2>Attack on Titan</h2>
+            <img src="image 63.png" alt="Attack on Titan">
+            <p>Humanity fights for survival against giant humanoid creatures called Titans.</p>
+            <button onclick="ff()">Watch Now</button>
+        </div>
+
+        <div class="card">
+            <h2>My Hero Academia</h2>
+            <img src="image 38.png" alt="My Hero Academia">
+            <p>Follow Izuku Midoriya as he trains to become the greatest hero.</p>
+            <button onclick="ff()">Watch Now</button>
+        </div>
+
+        <div class="card">
+            <h2>Demon Slayer</h2>
+            <img src="image 60.png" alt="Demon Slayer">
+            <p>Tanjiro Kamado battles demons to save his sister and avenge his family.</p>
+            <button onclick="ff()">Watch Now</button>
+        </div>
+    </div>
+
+  
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Fans Say</h2>
+        <div class="testimonial-card">
+            <p>"Anime World has the best collection of anime I've ever seen. Highly recommended!"</p>
+            <span>- Magzhan Skakov</span>
+        </div>
+        <div class="testimonial-card">
+            <p>"I love the user-friendly interface and the variety of genres available."</p>
+            <span>- Kanat Aldabek</span>
+        </div>
+    </section>
+    <section class="pricing" id="pricing">
+        <h2>Choose Your Plan</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Basic Plan</h3>
+                <p>$9.99/month</p>
+                <button onclick="showPaymentForm(this)">Subscribe</button>
+                <div class="payment-form">
+                    <input type="text" placeholder="Card Number" required>
+                    <input type="text" placeholder="Expiry Date" required>
+                    <input type="text" placeholder="CVV" required>
+                    <label>
+                        <input type="checkbox" required> I agree to the terms and conditions
+                    </label>
+                    <button onclick="processPayment()">Pay Now</button>
+                </div>
+            </div>
+            <div class="pricing-card">
+                <h3>Premium Plan</h3>
+                <p>$19.99/month</p>
+                <button onclick="showPaymentForm(this)">Subscribe</button>
+                <div class="payment-form">
+                    <input type="text" placeholder="Card Number" required>
+                    <input type="text" placeholder="Expiry Date" required>
+                    <input type="text" placeholder="CVV" required>
+                    <label>
+                        <input type="checkbox" required> I agree to the terms and conditions
+                    </label>
+                    <button onclick="processPayment()">Pay Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div class="cta" id="cta">
+    <h2 style="text-align: center;">Join Anime World Today!</h2>
+    <p style="text-align: center;">Unlimited access to thousands of anime series and movies.</p>
+    <div style="display: flex; justify-content: center;">
+        <button onclick="net()">Sign Up Now</button>
+    </div>
+</div>
+
+  
+    <footer>
+        <p>&copy; 2025 AniVerse. All rights reserved.</p>
+    </footer>
+<script>
+function net(){
+    window.location.href='signup.html'
+}
+function ff(){
+    window.location.href='index.html'
+}
+function showPaymentForm(button) {
+            const paymentForm = button.nextElementSibling;
+            paymentForm.style.display = "block";
+        }
+
+        function processPayment() {
+            alert("thx a lor");
+        }
+        function ck(){
+            window.location.href='index.html'
+        }
+
+</script>
 </body>
 </html>
