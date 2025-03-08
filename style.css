@@ -501,7 +501,7 @@ main {
     }
 
     .sidebar.active {
-        right: 0; /* Показываем меню */
+        right: 0;
     }
 
     .menu li {
